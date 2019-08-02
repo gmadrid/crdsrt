@@ -46,7 +46,10 @@ impl Card {
         s.split(pat)
             .map(|piece| piece.trim())
             .map(|trimmed| Card::parse(trimmed))
-            .fold_results(Vec::new(), |mut vec, crd| {vec.push(crd.0); vec })
+            .fold_results(Vec::new(), |mut vec, crd| {
+                vec.push(crd.0);
+                vec
+            })
     }
 
     pub fn parse(s: &str) -> Result<(Card, &str)> {
@@ -175,6 +178,55 @@ mod test {
         assert_eq!(
             (Card::new(CardValue::VT, CardSuit::Spades), "REST"),
             Card::parse("10SREST").unwrap()
+        );
+    }
+
+    fn ten_card_string() -> &'static str {
+        // with some noise and extra/missing spaces.
+        "4C, 2H, 7D, 3C, 4H, 6D,   AS,5H, 9S, 2S"
+    }
+
+    fn ten_card_vec() -> Vec<Card> {
+        vec![
+            Card::new(CardValue::V4, CardSuit::Clubs),
+            Card::new(CardValue::V2, CardSuit::Hearts),
+            Card::new(CardValue::V7, CardSuit::Diamonds),
+            Card::new(CardValue::V3, CardSuit::Clubs),
+            Card::new(CardValue::V4, CardSuit::Hearts),
+            Card::new(CardValue::V6, CardSuit::Diamonds),
+            Card::new(CardValue::VA, CardSuit::Spades),
+            Card::new(CardValue::V5, CardSuit::Hearts),
+            Card::new(CardValue::V9, CardSuit::Spades),
+            Card::new(CardValue::V2, CardSuit::Spades),
+        ]
+    }
+
+    #[test]
+    fn test_parse_vec() {
+        assert_eq!(Card::parse_vec(ten_card_string()).unwrap(), ten_card_vec());
+
+        assert!(Card::parse_vec("4C,2H,3C,XX,4C,8H").is_err());
+    }
+
+    #[test]
+    fn test_sort_vec() {
+        let mut vec = Card::parse_vec(ten_card_string()).unwrap();
+        vec.sort();
+
+        assert_eq!(
+            vec,
+            vec! {
+                Card::new(CardValue::V3, CardSuit::Clubs),
+                Card::new(CardValue::V4, CardSuit::Clubs),
+                Card::new(CardValue::V2, CardSuit::Hearts),
+                Card::new(CardValue::V4, CardSuit::Hearts),
+                Card::new(CardValue::V5, CardSuit::Hearts),
+                Card::new(CardValue::VA, CardSuit::Spades),
+                Card::new(CardValue::V2, CardSuit::Spades),
+                Card::new(CardValue::V9, CardSuit::Spades),
+                Card::new(CardValue::V6, CardSuit::Diamonds),
+                Card::new(CardValue::V7, CardSuit::Diamonds),
+            }
         );
     }
 }

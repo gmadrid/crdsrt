@@ -1,0 +1,12 @@
+[package]
+name = "crdsrt"
+version = "0.1.0"
+authors = ["gmadrid"]
+edition = "2018"
+
+[lib]
+name = "cards"
+
+[dependencies]
+error-chain = "0.12.0"
+itertools = "0.8.0"

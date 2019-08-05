@@ -4,9 +4,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="367aa8f3-4923-429d-9a16-61c04b1ed8c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/card.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/card.rs" afterDir="false" />
-    </list>
+    <list default="true" id="367aa8f3-4923-429d-9a16-61c04b1ed8c6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/card.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="250">
+              <caret line="104" column="47" selection-start-line="19" selection-end-line="104" selection-end-column="47" />
               <folding>
                 <element signature="e#525#526#0" expanded="true" />
                 <element signature="e#558#559#0" expanded="true" />
@@ -234,7 +232,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564686026623</updated>
       <workItem from="1564686030124" duration="9502000" />
-      <workItem from="1564771110258" duration="1718000" />
+      <workItem from="1564771110258" duration="2341000" />
     </task>
     <servers />
   </component>
@@ -271,7 +269,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11220000" />
+    <option name="totallyTimeSpent" value="11843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
@@ -383,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/card.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="250">
+          <caret line="104" column="47" selection-start-line="19" selection-end-line="104" selection-end-column="47" />
           <folding>
             <element signature="e#525#526#0" expanded="true" />
             <element signature="e#558#559#0" expanded="true" />
